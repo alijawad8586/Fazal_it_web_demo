@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container narrow">
+    <a routerLink="/blog" class="back-link">← Back to Blog</a>
+
+    @if (loading()) {
+      <p class="state-msg">Loading…</p>
+    } @else if (error() || !post()) {
+      <p class="state-msg">We couldn't find that article.</p>
+    } @else {
+      <article>
+        <img class="cover" [src]="cover(post()!.id)" alt="" />
+        <span class="blog-category">{{ post()!.category }}</span>
+        <h1>{{ post()!.title }}</h1>
+        <p class="meta">
+          {{ post()!.author }} · {{ post()!.publishedOn | date: 'mediumDate' }} · {{ post()!.readTime }}
+        </p>
+        <div class="content">{{ post()!.content }}</div>
+      </article>
+    }
+  </div>
+</section>

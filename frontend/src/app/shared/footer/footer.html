@@ -1,0 +1,37 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a routerLink="/" class="brand">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">Fazal Tech Solutions</span>
+      </a>
+      <p>
+        We build modern, reliable websites and digital solutions that help
+        businesses look professional, work smoothly, and grow.
+      </p>
+      <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        @for (link of company; track link.label) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        @for (link of services; track link.label) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {{ year }} Fazal Tech Solutions. All rights reserved.</p>
+  </div>
+</footer>

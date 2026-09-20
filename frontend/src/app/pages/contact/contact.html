@@ -1,0 +1,55 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's Talk About Your Project</h1>
+    <p class="lead">Tell us about your business and goals — we'll get back to you shortly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+    <img class="contact-art" src="images/contact.svg" alt="Illustration of an envelope and chat bubble" width="480" height="420" />
+    <div>
+    @if (sent()) {
+      <div class="card notice success">
+        <h2>Thanks — your message is on its way.</h2>
+        <p>We'll be in touch soon.</p>
+        <button type="button" class="btn btn-outline" (click)="sent.set(false)">Send another message</button>
+      </div>
+    } @else {
+      <form class="card contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <label>
+          Name *
+          <input type="text" formControlName="name" autocomplete="name" />
+          @if (invalid('name')) { <span class="err">Please enter your name.</span> }
+        </label>
+
+        <label>
+          Email *
+          <input type="email" formControlName="email" autocomplete="email" />
+          @if (invalid('email')) { <span class="err">Please enter a valid email address.</span> }
+        </label>
+
+        <label>
+          Subject
+          <input type="text" formControlName="subject" />
+        </label>
+
+        <label>
+          Message *
+          <textarea rows="6" formControlName="message"></textarea>
+          @if (invalid('message')) { <span class="err">Please enter a message.</span> }
+        </label>
+
+        @if (failed()) {
+          <p class="err">Something went wrong sending your message. Please make sure the API is running and try again.</p>
+        }
+
+        <button type="submit" class="btn btn-primary" [disabled]="submitting()">
+          {{ submitting() ? 'Sending…' : 'Send Message' }}
+        </button>
+      </form>
+    }
+    </div>
+  </div>
+</section>

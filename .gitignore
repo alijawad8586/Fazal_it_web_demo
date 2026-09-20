@@ -1,0 +1,20 @@
+# Node / Angular (frontend)
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+
+# .NET (backend)
+bin/
+obj/
+*.user
+
+# Backup archives (not needed in source control)
+backend.zip
+frontend.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

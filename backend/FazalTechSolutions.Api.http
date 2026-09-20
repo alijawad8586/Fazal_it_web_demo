@@ -1,0 +1,6 @@
+@FazalTechSolutions.Api_HostAddress = http://localhost:5269
+
+GET {{FazalTechSolutions.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

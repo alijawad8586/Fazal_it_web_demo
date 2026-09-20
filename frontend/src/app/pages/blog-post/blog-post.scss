@@ -1,0 +1,46 @@
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.blog-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-bg-soft-2);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+
+.cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.content {
+  white-space: pre-line;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.state-msg {
+  text-align: center;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 420" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efebff"/>
+      <stop offset="1" stop-color="#e2dcf5"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#684df4"/>
+      <stop offset="1" stop-color="#4026ad"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="400" cy="80" r="56" fill="#684df4" opacity=".12"/>
+  <circle cx="70" cy="350" r="40" fill="#684df4" opacity=".10"/>
+
+  <!-- envelope -->
+  <rect x="80" y="130" width="280" height="190" rx="18" fill="#fff" stroke="#e2dcf5"/>
+  <path d="M84 146l136 96 136-96" stroke="#684df4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 306l100-84M356 306l-100-84" stroke="#c9bffb" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- chat bubble -->
+  <path d="M290 60h120a20 20 0 0 1 20 20v60a20 20 0 0 1-20 20h-70l-24 22v-22h-26a20 20 0 0 1-20-20V80a20 20 0 0 1 20-20z" fill="url(#brand)"/>
+  <circle cx="318" cy="110" r="6" fill="#fff"/>
+  <circle cx="350" cy="110" r="6" fill="#fff"/>
+  <circle cx="382" cy="110" r="6" fill="#fff"/>
+
+  <!-- check badge -->
+  <circle cx="110" cy="112" r="26" fill="#1ebd5a"/>
+  <path d="M98 112l9 9 16-18" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

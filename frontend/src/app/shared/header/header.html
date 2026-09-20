@@ -1,0 +1,47 @@
+<header class="site-header" [class.scrolled]="isScrolled()">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand-mark">F</span>
+      <span class="brand-name">Fazal Tech Solutions</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <div class="header-actions">
+      <a routerLink="/contact" class="btn btn-primary cta-desktop">Get a Quote</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMenuOpen()) {
+    <div class="nav-mobile">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+        >{{ link.label }}</a>
+      }
+      <a routerLink="/contact" class="btn btn-primary" (click)="closeMenu()">Get a Quote</a>
+    </div>
+  }
+</header>

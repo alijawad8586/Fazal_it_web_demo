@@ -1,0 +1,107 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About Us</span>
+    <h1>We Build Digital Solutions That Help Businesses Grow</h1>
+    <p class="lead">
+      At Fazal Tech Solutions, we help businesses build a strong and
+      professional presence online through modern websites, reliable
+      technology, and practical digital solutions.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-intro">
+    <img src="images/photos/team.jpg" alt="Team collaborating around laptops" width="1200" height="800" />
+    <div>
+    <p>
+      We work with startups, small businesses, entrepreneurs, and growing
+      companies that want to create, improve, or maintain their online
+      presence.
+    </p>
+    <p>
+      Our goal is simple: build websites and digital solutions that look
+      professional, work smoothly, and help businesses achieve real results.
+    </p>
+    </div>
+  </div>
+</section>
+
+<section class="section what-we-do">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What We Do</span>
+      <h2>A range of digital services designed for modern businesses</h2>
+    </div>
+
+    <ul class="service-list">
+      @for (item of services; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <div class="section-heading left">
+      <span class="eyebrow">Our Approach</span>
+      <h2>A good website is more than just a beautiful design</h2>
+    </div>
+    <p>It should:</p>
+    <p class="approach-line">
+      Look professional → Be easy to use → Load quickly → Work on every
+      device → Support your business goals.
+    </p>
+    <p>
+      That's why we focus on understanding the business first and then
+      creating a solution that fits its actual needs.
+    </p>
+  </div>
+</section>
+
+<section class="section why-us">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Why Choose Fazal Tech Solutions?</span>
+      <h2>Built around your business, not a template</h2>
+    </div>
+
+    <div class="why-grid">
+      @for (item of whyChooseUs; track item.title) {
+        <div class="why-item">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <div class="section-heading left">
+      <span class="eyebrow">Our Mission</span>
+      <h2>Making professional technology accessible to businesses of all sizes</h2>
+    </div>
+    <p>
+      We want to help businesses move from <strong>"I need a website"</strong>
+      to <strong>"My website is helping my business grow."</strong>
+    </p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-band-inner">
+    <div>
+      <h2>Let's Build Something That Works</h2>
+      <p>
+        Whether you need a new website, want to redesign an existing one,
+        need ongoing maintenance, or want to automate part of your business,
+        Fazal Tech Solutions is here to help. Let's turn your idea into a
+        digital solution.
+      </p>
+    </div>
+    <a routerLink="/contact" class="btn btn-light">Let's Talk →</a>
+  </div>
+</section>

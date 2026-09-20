@@ -1,0 +1,46 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">What We Do</span>
+    <h1>Digital Services Built Around Your Business</h1>
+    <p class="lead">
+      We provide a range of digital services designed around the needs of
+      modern businesses — from a first website to ongoing support.
+    </p>
+    <img class="services-banner" src="images/photos/workspace.jpg" alt="Modern workspace with two monitors" width="1200" height="800" />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    @if (loading()) {
+      <p class="state-msg">Loading services…</p>
+    } @else if (error()) {
+      <p class="state-msg">
+        Couldn't load services right now. Please make sure the API is
+        running and try again.
+      </p>
+    } @else {
+      <div class="services-grid">
+        @for (service of services(); track service.id) {
+          <div class="card service-card">
+            <div class="service-icon">
+              <app-service-icon [icon]="service.icon" />
+            </div>
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.description }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-band-inner">
+    <div>
+      <h2>Not sure which service you need?</h2>
+      <p>Tell us about your business and goals — we'll recommend the right starting point.</p>
+    </div>
+    <a routerLink="/contact" class="btn btn-light">Get a Quote →</a>
+  </div>
+</section>

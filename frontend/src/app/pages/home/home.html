@@ -1,0 +1,127 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Websites &amp; Digital Solutions</span>
+      <h1>We Build Digital Solutions That Help Businesses Grow</h1>
+      <p class="lead">
+        At Fazal Tech Solutions, we help businesses build a strong and
+        professional presence online through modern websites, reliable
+        technology, and practical digital solutions.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/contact" class="btn btn-primary">Get a Quote →</a>
+        <a routerLink="/services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+
+    <img class="hero-img" src="images/photos/laptop.jpg" alt="Developer working on a website on a laptop" width="1200" height="798" />
+  </div>
+</section>
+
+<section class="section services-preview">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What We Do</span>
+      <h2>Digital services built around your business</h2>
+      <p>
+        We provide a range of digital services designed around the needs of
+        modern businesses.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services(); track service.id) {
+        <div class="card service-card">
+          <div class="service-icon">
+            <app-service-icon [icon]="service.icon" />
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.summary }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="section-cta">
+      <a routerLink="/services" class="btn btn-outline">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section approach">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Approach</span>
+      <h2>A good website is more than just a beautiful design</h2>
+      <p>
+        That's why we focus on understanding the business first and then
+        creating a solution that fits its actual needs.
+      </p>
+    </div>
+
+    <div class="approach-flow">
+      @for (step of approachSteps; track step; let last = $last) {
+        <div class="approach-step">
+          <span class="step-badge">{{ $index + 1 }}</span>
+          <span>{{ step }}</span>
+        </div>
+        @if (!last) {
+          <span class="approach-arrow">→</span>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section why-us">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Why Choose Fazal Tech Solutions</span>
+      <h2>A team that focuses on your business, not just your website</h2>
+    </div>
+
+    <div class="why-grid">
+      @for (item of whyChooseUs; track item.title) {
+        <div class="why-item">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+@if (latestPosts().length) {
+  <section class="section blog-preview">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">From the Blog</span>
+        <h2>Insights to help your business grow online</h2>
+      </div>
+
+      <div class="blog-grid">
+        @for (post of latestPosts(); track post.id) {
+          <a class="card blog-card" [routerLink]="['/blog', post.slug]">
+            <img class="blog-cover" [src]="cover(post.id)" alt="" loading="lazy" />
+            <span class="blog-category">{{ post.category }}</span>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+            <span class="blog-meta">{{ post.readTime }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<section class="cta-band">
+  <div class="container cta-band-inner">
+    <div>
+      <h2>Let's Build Something That Works</h2>
+      <p>
+        Whether you need a new website, want to redesign an existing one, or
+        want to automate part of your business — we're here to help.
+      </p>
+    </div>
+    <a routerLink="/contact" class="btn btn-light">Let's Talk →</a>
+  </div>
+</section>
